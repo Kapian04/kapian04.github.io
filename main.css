@@ -1,0 +1,25 @@
+
+  .button {
+  color: red;
+  border: 2px solid red;
+  padding: 5px;
+  width: fit-content;
+  cursor: pointer;  
+  user-select: none;
+  display: inline;
+  margin-top: 10px;
+  margin: 10px;
+  text-align: left;
+  font-weight: bold;
+}
+#loss {
+  font.size: 40px;
+}
+div {
+  font-family: serif;
+  color: white;
+}
+body {
+  background-image: url('https://wallscover.com/images/black-jack-wallpaper-8.jpg');
+  background-size:100% ;
+}   
