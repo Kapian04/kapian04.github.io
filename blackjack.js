@@ -367,10 +367,10 @@ function hit(){
 }
 
 function stand(){
-	console.log("stand");
-	if(dTotalValue < 17){	
+	console.log("stan");	
+		if(dTotalValue < 17){	
  		while(dTotalValue < 17){
-
+ 			document.getElementById("loss/stand").innerHTML = 'You stand';
 	 		getPlayerSum();
 			getDealerSum();
 
@@ -382,7 +382,36 @@ function stand(){
 
 			dealerHand.push(choosenCard);
 
+			if(dealerHand.length == 3){
+			document.getElementById("dealerHand").innerHTML = 'You hold ' + dealerHand[0].name + ', ' + dealerHand[1].name + ' and ' + dealerHand[2].name + '.';
+			
+			if(dTotalValue < totalValue && dTotalValue >= 17){
+				document.getElementById("loss/stand").innerHTML = 'You win!';
+			}
+			if(dTotalValue < totalValue && dTotalValue >= 17){
+				document.getElementById("loss/stand").innerHTML = 'The dealer wins!';
+			}
+			if(dTotalValue = totalValue && dTotalValue >= 17){
+				document.getElementById("loss/stand").innerHTML = 'Its a push!';
+			}
+			}
+			if(dealerHand.length == 4){
+			document.getElementById("dealerHand").innerHTML = 'You hold ' + dealerHand[0].name + ', ' + dealerHand[1].name + ', ' + dealerHand[2].name + ' and ' + dealerHand[3].name + '.';
+
+			if(dTotalValue < totalValue && dTotalValue >= 17){
+				document.getElementById("loss/stand").innerHTML = 'You win!';
+			}
+			if(dTotalValue < totalValue && dTotalValue >= 17){
+				document.getElementById("loss/stand").innerHTML = 'The dealer wins!';
+			}
+			if(dTotalValue = totalValue && dTotalValue >= 17){
+				document.getElementById("loss/stand").innerHTML = 'Its a push!';
+			}
+	}
+
+			document.getElementById("dTotalValue").innerHTML = 'The dealers value is ' + dTotalValue + '.';
 		}
+
   	}
   	else if(dTotalValue >= 17){
   		if(totalValue < dTotalValue){
@@ -394,13 +423,14 @@ function stand(){
 			
 
   		}
-  		if(totalValue > dTotalValue){
+  		/*if(totalValue > dTotalValue){
   			getPlayerSum();
 			getDealerSum();
   			document.getElementById("dealerHand").innerHTML = 'The dealer holds ' + dTotalValue + ' and ' + dealerHand[1].name;
   			document.getElementById("loss/stand").innerHTML = 'You stand and you win!';
 			document.getElementById("dTotalValue").innerHTML = 'The dealers value is ' + dTotalValue + '.';
   		}
+  		*/
   	}
  
 }
