@@ -390,7 +390,7 @@ function stand(){
   			getPlayerSum();
 			getDealerSum();
   			document.getElementById("dealerHand").innerHTML = 'The dealer holds ' + dealerHand[0].name +  ' and ' + dealerHand[1].name;
-  			document.getElementById("loss/stand").innerHTML = '<stron>You stand and you lose!&#x1f4b8;</strong>';
+  			document.getElementById("loss/stand").innerHTML = '<strong>You stand and you lose!&#x1f4b8;</strong>';
 			document.getElementById("dTotalValue").innerHTML = 'The dealers value is ' + dTotalValue + '!';
   		}
  		if(dTotalValue == totalValue){
