@@ -235,47 +235,6 @@ hearts10, heartsJack, heartsQueen, heartsKing
  let dealerHand = [];
 
 
-
-/*
-function cardsLeftInDeck (){
-	for(var i = 0; i < deck.length; i++){
- 		if(i === deck.length) {
- 			return i - 1;
- 		}
- 	}
-}
-
-
- function dealCards(){
- for(var i = 0; i < 2; i++){
- 	let randomNumber = Math.floor(Math.random()* cardsLeftInDeck());
- 	// dra ett kort från dealer hand
- 	// ge kort till spelaren
- 	// ta bort kort från dealer hand
- 	return playerHand.push(deck[randomNumber]);
- }
- return dealerHand.push(deck[randomNumber]);
- }
-
-function getRidOfCardsInDeck(){
- for(var i = 0; i < deck.length; i++){
- 	for(var j = 0; j < playerHand.length; j++){
- 		if(deck[i - 1] === playerhand[j - 1]){
- 			return delete deck[i - 1];
- 		}
- 	}
- }
- for(var i = 0; i < deck.length; i++){
- 	for(var j = 0; j < dealerHand.length; j++){
- 		if(deck[i - 1] === dealerhand[j - 1]){
- 			return delete deck[i - 1];
- 		}
- 	}
- }
-}
-*/
-
-
 function dealCardsToPlayer(){
 	for(var i = 0; i < 2; i++){
  	
@@ -436,16 +395,10 @@ function stand(){
 			
 
   		}
-  		/*if(totalValue > dTotalValue){
-  			getPlayerSum();
-			getDealerSum();
-  			document.getElementById("dealerHand").innerHTML = 'The dealer holds ' + dTotalValue + ' and ' + dealerHand[1].name;
-  			document.getElementById("loss/stand").innerHTML = 'You stand and you win!';
-			document.getElementById("dTotalValue").innerHTML = 'The dealers value is ' + dTotalValue + '.';
-  		}
-  		*/
-  	}
- 
+ 	if(dTotalValue == totalValue){
+ 		console.log("push");
+		document.getElementById("loss/stand").innerHTML = '<br/><strong>You stand and its a push!&#x1f450;</strong>';
+ 	}
 }
 
 
@@ -496,15 +449,5 @@ else {
 
 document.write('</div>');
 
-/*
-else if(dSecondCard.value + dFirstCard.value < firstCard.value + secondCard.value){
-	document.write('YOU WIN!');
-} 
-else if(dSecondCard.value + dFirstCard.value > firstCard.value + secondCard.value){
-	document.write('THE DEALER WINS!');
-}
-else if(dSecondCard.value + dFirstCard.value === firstCard.value + secondCard.value){
-	document.write('DRAW, ITS A PUSH');
-}
-*/
+
 
