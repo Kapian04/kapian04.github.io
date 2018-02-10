@@ -434,7 +434,7 @@ getDealerSum();
 
 console.log(dealerHand);
 
-
+document.write('<h1><strong>Welcome to BlackJack</strong><h1><br />');
 document.write('<div id="AddHit">You hold ' + playerHand[0].name + ' and ' + playerHand[1].name + '.<br></div>'); 
 //document.write('<div style="font-size:124px">&#x1f0a1;</div>');
 document.write('<div id="totalValue">Your value is <strong>' + totalValue + '</strong>.<br></div>');
