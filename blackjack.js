@@ -437,6 +437,7 @@ document.write('<div id="AddHit">You hold ' + playerHand[0].name + ' and ' + pla
 document.write('<div id="totalValue">Your value is <strong>' + totalValue + '</strong>.<br></div>');
 document.write('<div id="dealerHand">The dealer holds ' + dealerHand[0].name + ' and a hidden card.<br></div>');
 document.write('<div id="dTotalValue">The dealers value is <strong> ' + dealerHand[0].value + '</strong>.<br><br></div>');
+
 document.write('<div id = "loss/stand">');
 
 if(playerHand[0].value + playerHand[1].value === 21){
