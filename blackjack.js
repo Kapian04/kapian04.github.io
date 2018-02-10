@@ -319,7 +319,7 @@ function hit(){
 		document.getElementById("totalValue").innerHTML = 'Your value is ' + totalValue + '.'; 
 
 		if(totalValue > 21){
-			document.getElementById("loss/stand").innerHTML = 'You lose';
+			document.getElementById("loss/stand").innerHTML = '<strong>You are bust and lose! &#x1f4b8;</strong>';
 		}
 	}
 
@@ -330,7 +330,7 @@ function hit(){
 		document.getElementById("totalValue").innerHTML = 'Your value is ' + totalValue + '.'; 
 
 		if(totalValue > 21){
-			document.getElementById("loss/stand").innerHTML = 'You lose';
+			document.getElementById("loss/stand").innerHTML = '<strong>You are bust and lose! &#x1f4b8;</strong>';
 		}
 	}
 
@@ -341,7 +341,7 @@ function hit(){
 		document.getElementById("totalValue").innerHTML = 'Your value is ' + totalValue + '.'; 
 
 		if(totalValue > 21){
-			document.getElementById("loss/stand").innerHTML = 'You lose';
+			document.getElementById("loss/stand").innerHTML = '<strong>You are bust and lose! &#x1f4b8;</strong>';
 		}
 	}
 	if(playerHand.length == 6){
@@ -351,7 +351,7 @@ function hit(){
 		document.getElementById("totalValue").innerHTML = 'Your value is ' + totalValue + '.'; 
 
 		if(totalValue > 21){
-			document.getElementById("loss/stand").innerHTML = 'You lose';
+			document.getElementById("loss/stand").innerHTML = '<strong>You are bust and lose! &#x1f4b8;</strong>';
 		}
 	}
 	if(playerHand.length == 7){
@@ -361,15 +361,16 @@ function hit(){
 		document.getElementById("totalValue").innerHTML = 'Your value is ' + totalValue + '.'; 
 
 		if(totalValue > 21){
-			document.getElementById("loss/stand").innerHTML = 'You lose';
+			document.getElementById("loss/stand").innerHTML = '<strong>You are bust and lose! &#x1f4b8;</strong>';
 		}
 	}
 }
 
 function stand(){
-	console.log("stan");	
-		if(dTotalValue < 17){	
+
+	if(dTotalValue < 17){	
  		while(dTotalValue < 17){
+
  			document.getElementById("loss/stand").innerHTML = 'You stand';
 	 		getPlayerSum();
 			getDealerSum();
@@ -382,34 +383,46 @@ function stand(){
 
 			dealerHand.push(choosenCard);
 
+			console.log(3, "dTotalValue is ", dTotalValue);
+
 			if(dealerHand.length == 3){
-			document.getElementById("dealerHand").innerHTML = 'You hold ' + dealerHand[0].name + ', ' + dealerHand[1].name + ' and ' + dealerHand[2].name + '.';
-			
-			if(dTotalValue < totalValue && dTotalValue >= 17){
-				document.getElementById("loss/stand").innerHTML = 'You win!';
-			}
-			if(dTotalValue < totalValue && dTotalValue >= 17){
-				document.getElementById("loss/stand").innerHTML = 'The dealer wins!';
-			}
-			if(dTotalValue = totalValue && dTotalValue >= 17){
-				document.getElementById("loss/stand").innerHTML = 'Its a push!';
-			}
+				console.log("dealerhand is 3", dTotalValue, totalValue);
+
+				document.getElementById("dealerHand").innerHTML = 'You hold ' + dealerHand[0].name + ', ' + dealerHand[1].name + ' and ' + dealerHand[2].name + '.';
+
+				
 			}
 			if(dealerHand.length == 4){
-			document.getElementById("dealerHand").innerHTML = 'You hold ' + dealerHand[0].name + ', ' + dealerHand[1].name + ', ' + dealerHand[2].name + ' and ' + dealerHand[3].name + '.';
+				console.log("dealerhand is 4", dTotalValue, totalValue);
+
+				document.getElementById("dealerHand").innerHTML = 'You hold ' + dealerHand[0].name + ', ' + dealerHand[1].name + ', ' + dealerHand[2].name + ' and ' + dealerHand[3].name + '.';
+			}
+			if(dealerHand.length == 5){
+				console.log("dealerhand is 5", dTotalValue, totalValue);
+				document.getElementById("dealerHand").innerHTML = 'You hold ' + dealerHand[0].name + ', ' + dealerHand[1].name + ', ' + dealerHand[2].name + ', ' + dealerHand[3].name + ' and ' + dealerHand[4].name +  '.';
+			}
+			// 26 21
 
 			if(dTotalValue < totalValue && dTotalValue >= 17){
-				document.getElementById("loss/stand").innerHTML = 'You win!';
+				console.log("you win");
+				document.getElementById("loss/stand").innerHTML = '<br/><strong>You stand and you win!&#x1f44f;</strong>';
 			}
-			if(dTotalValue < totalValue && dTotalValue >= 17){
-				document.getElementById("loss/stand").innerHTML = 'The dealer wins!';
+			if(dTotalValue > totalValue && dTotalValue >= 17){
+				console.log("dealer win");
+				document.getElementById("loss/stand").innerHTML = '<br/><strong>You stand and the dealer wins!&#x1f4b8;</strong>';
 			}
-			if(dTotalValue = totalValue && dTotalValue >= 17){
-				document.getElementById("loss/stand").innerHTML = 'Its a push!';
+			if(dTotalValue > 21){
+				document.getElementById("loss/stand").innerHTML = '<br/><stron> The dealer is bust and you win&#x1f44f;!</strong>';
 			}
-	}
+			if(dTotalValue === totalValue && dTotalValue >= 17 && dTotalValue <= 21){
+				console.log("push");
+				document.getElementById("loss/stand").innerHTML = '<br/><strong>You stand and its a push!&#x1f450;</strong>';
+			}
+
 
 			document.getElementById("dTotalValue").innerHTML = 'The dealers value is ' + dTotalValue + '.';
+
+			console.log(4, "dTotalValue is ", dTotalValue);
 		}
 
   	}
