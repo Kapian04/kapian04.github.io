@@ -364,14 +364,14 @@ function stand(){
 
 			if(dTotalValue < totalValue && dTotalValue >= 17){
 				console.log("you win");
-				document.getElementById("loss/stand").innerHTML = '<br/><strong>You stand and you win!&#x1f44f;</strong>';
+				document.getElementById("loss/stand").innerHTML = '<br/><strong>You stand and you win! &#x1f44f;</strong>';
 			}
 			if(dTotalValue > totalValue && dTotalValue >= 17){
 				console.log("dealer win");
-				document.getElementById("loss/stand").innerHTML = '<br/><strong>You stand and the dealer wins!&#x1f4b8;</strong>';
+				document.getElementById("loss/stand").innerHTML = '<br/><strong>You stand and the dealer wins! &#x1f4b8;</strong>';
 			}
 			if(dTotalValue > 21){
-				document.getElementById("loss/stand").innerHTML = '<br/><stron> The dealer is bust and you win&#x1f44f;!</strong>';
+				document.getElementById("loss/stand").innerHTML = '<br/><stron> The dealer is bust and you win! &#x1f44f;</strong>';
 			}
 			if(dTotalValue === totalValue && dTotalValue >= 17 && dTotalValue <= 21){
 				console.log("push");
@@ -390,14 +390,17 @@ function stand(){
   			getPlayerSum();
 			getDealerSum();
   			document.getElementById("dealerHand").innerHTML = 'The dealer holds ' + dealerHand[0].name +  ' and ' + dealerHand[1].name;
-  			document.getElementById("loss/stand").innerHTML = 'You stand and you lose!';
+  			document.getElementById("loss/stand").innerHTML = '<stron>You stand and you lose!&#x1f4b8;</strong>';
 			document.getElementById("dTotalValue").innerHTML = 'The dealers value is ' + dTotalValue + '!';
-			
-
   		}
- 	if(dTotalValue == totalValue){
- 		console.log("push");
-		document.getElementById("loss/stand").innerHTML = '<br/><strong>You stand and its a push!&#x1f450;</strong>';
+ 		if(dTotalValue == totalValue){
+ 			getPlayerSum();
+			getDealerSum();
+ 			console.log("push");
+ 			document.getElementById("dTotalValue").innerHTML = 'The dealers value is ' + dTotalValue + '!';
+ 			document.getElementById("dealerHand").innerHTML = 'The dealer holds ' + dealerHand[0].name +  ' and ' + dealerHand[1].name;
+			document.getElementById("loss/stand").innerHTML = '<br/><strong>You stand and its a push!&#x1f450;</strong>';
+ 		}
  	}
 }
 
@@ -432,20 +435,20 @@ getDealerSum();
 console.log(dealerHand);
 
 
-document.write('<div id="AddHit">You hold ' + playerHand[0].name + ' and ' + playerHand[1].name + '. <br></div>'); 
+document.write('<div id="AddHit">You hold ' + playerHand[0].name + ' and ' + playerHand[1].name + '.<br></div>'); 
 //document.write('<div style="font-size:124px">&#x1f0a1;</div>');
 document.write('<div id="totalValue">Your value is <strong>' + totalValue + '</strong>.<br></div>');
 document.write('<div id="dealerHand">The dealer holds ' + dealerHand[0].name + ' and a hidden card.<br></div>');
 document.write('<div id="dTotalValue">The dealers value is <strong> ' + dealerHand[0].value + '</strong>.<br><br></div>');
 
-document.write('<div id = "loss/stand">');
+document.write('<div id="loss/stand">');
 
 if(playerHand[0].value + playerHand[1].value === 21){
  	document.write('<div>YOU WIN!</div>');
 }
 else {
 	document.write('<div class="button hit" onClick="hit()">Hit</div>');
-	document.write('<div class="button stand" onClick="stand()">Stand</div>')
+	document.write('<div class="button stand" onClick="stand()">Stand</div>');
 }
 
 document.write('</div>');
