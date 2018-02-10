@@ -390,7 +390,7 @@ function stand(){
   			getPlayerSum();
 			getDealerSum();
   			document.getElementById("dealerHand").innerHTML = 'The dealer holds ' + dealerHand[0].name +  ' and ' + dealerHand[1].name;
-  			document.getElementById("loss/stand").innerHTML = '<strong>You stand and you lose!&#x1f4b8;</strong>';
+  			document.getElementById("loss/stand").innerHTML = '<strong>You stand and the dealer wins!&#x1f4b8;</strong>';
 			document.getElementById("dTotalValue").innerHTML = 'The dealers value is ' + dTotalValue + '!';
   		}
  		if(dTotalValue == totalValue){
@@ -434,7 +434,9 @@ getDealerSum();
 
 console.log(dealerHand);
 
-document.write('<h1><strong>Welcome to BlackJack</strong><h1><br />');
+document.write('<div class="heading">Welcome to BlackJack</div><br />');
+
+
 document.write('<div id="AddHit">You hold ' + playerHand[0].name + ' and ' + playerHand[1].name + '.<br></div>'); 
 //document.write('<div style="font-size:124px">&#x1f0a1;</div>');
 document.write('<div id="totalValue">Your value is <strong>' + totalValue + '</strong>.<br></div>');
